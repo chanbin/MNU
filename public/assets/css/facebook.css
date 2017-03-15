@@ -3,7 +3,9 @@ html, body {
    height: 100%;
    font-family:verdana,arial,sans-serif;
    color:#555555;
+   -webkit-overflow-scrolling:touch;
 }
+
 
 .nav {
    font-family:Arial,sans-serif;
@@ -73,7 +75,8 @@ hr {
 
 .navbar-blue {
     border-width:0;
-	background-color:#3B5999;
+	/*background-color:#3B5999;*/
+	background-color: #00CCA4;
     color:#ffffff;
     font-family:arial,sans-serif;
     top:0;
@@ -97,6 +100,7 @@ hr {
    background-color:#e9eaed;
    padding-left:0;
    padding-right:0;
+   overflow-x: hidden;
 }
 #main .img-circle {
    margin-top:18px;
@@ -123,7 +127,7 @@ hr {
   display:block;
   padding:3px;
   background-color:#fff;
-  color:#3B5999;
+  color:#00CCA4;
   height:28px;
   width:28px;
   margin:9px;
@@ -161,8 +165,9 @@ h1,h2,h3 {
 }
 
 .btn-primary,.label-primary,.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus  {
-	background-color:#3B5999;
-    color:#fffffe;
+	background-color:#00CCA4;
+    /*color:#00A080;*/
+    color:#FFFFFF;
 }
 .btn-default {
     color:#666666;
@@ -178,11 +183,11 @@ h1,h2,h3 {
 }
   
 .badge{
-   color:#3B5999;
+   color:#00CCA4;
    background-color:#fff;
 }
 .badge:hover, .badge-inverse{
-   background-color:#3B5999;
+   background-color:#00CCA4;
    color:#fff;
 }
     
@@ -248,7 +253,7 @@ small.text-muted {
   }
 
   .navbar-blue {
-	background-color:#3B5999;
+	background-color:#00CCA4;
     top:0;
     width:100%;
     position:relative;

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'board#index'
+  root 'board#sign_off'
+  get 'board/sign_on'
+  get 'board/sign_in'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -88,12 +88,29 @@ class BoardController < ApplicationController
     
     def write_comment
         @pid = params[:pid]
-        if Comment.create(comment: params[:comment], pid: params[:pid])
+        if Comment.create(comment: params[:comment], pid: params[:pid], writer: params[:writer])
             cPost = Post.find(params[:pid])
             cPost.share = cPost.share + 1
             cPost.save
         end
         redirect_to :back
+    end
+    
+    def c_feature_up
+        fUp = Comment.find(params[:id])
+        fUp.like = fUp.like + 1
+        fUp.save
+        session[current_user.id.to_s + "comment like " + params[:id]] = 1
+        redirect_to (:back)
+    end
+    
+    
+    def c_feature_down
+        fDown = Comment.find(params[:id])
+        fDown.hate = fDown.hate + 1
+        fDown.save
+        session[current_user.id.to_s + "comment hate " + params[:id]] = 1
+        redirect_to (:back)
     end
 
 end

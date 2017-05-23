@@ -159,6 +159,7 @@
 												  <button class="btn btn-default">공유 <i class="glyphicon glyphicon-share"></i></button><br><br>
 													  <%= form_tag("/board/write_comment") do %>
 													  <input type="hidden" name="pid" value="<%=@cPost.id%>">
+													  <input type="hidden" name="writer" value="<%=current_user.username%>">
 													  <textarea class="form-control" cols="1" name="comment" placeholder="댓글을 입력해 주세요!"></textarea>
 													  <input type="submit" class="btn btn-default" value="댓글달기">
 													  <% end %>
@@ -173,8 +174,11 @@
 											<div class="input-group" style="">
 												<% @mComment.each do |c| %>
 												<%if @cPost.id == c.pid%>
-													<pre style="background:rgba(255, 255, 255, 0.5);border:none;font-size:90%;">댓글: <%=c.comment%><br>
-													<div style="text-align:right;margin-top:-10%;font-size:90%;"><%=c.updated_at%></div></pre>
+													<pre style="background:rgba(255, 255, 255, 0.5);border:none;font-size:90%;"><%=c.writer%>: <%=c.comment%><br>
+													<div class="" style="text-align:right;margin-top:-10%;font-size:90%;">
+														<div style="margin-top:-14%;margin-bottom:-5%;">
+														  <% if session[current_user.id.to_s + "comment like " + c.id.to_s] == 1 %><button class="" onclick="disable(this)"><%=c.like%> <i class="glyphicon glyphicon-thumbs-up"></i></button><% else %><button class="" onclick="location.href='/board/c_feature_up?id=<%=c.id%>' "><%=c.like%> <i class="glyphicon glyphicon-thumbs-up"></i></button><% end %><% if session[current_user.id.to_s + "comment hate " + c.id.to_s] == 1 %><button class="" onclick="disable(this)"><%=c.hate%> <i class="glyphicon glyphicon-thumbs-down"></i></button><% else %><button class="" onclick="location.href='/board/c_feature_down?id=<%=c.id%>' "><%=c.hate%> <i class="glyphicon glyphicon-thumbs-down"></i></button><% end %>
+														</div><%=c.updated_at%></div></pre>
 												<%end%>
 												<%end%>
 											</div>

@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20170405111342) do
     t.integer  "hate",       limit: 4,     default: 0
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
+    t.string   "writer",     limit: 255
   end
 
   create_table "posts", force: :cascade do |t|

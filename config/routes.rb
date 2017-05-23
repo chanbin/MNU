@@ -21,6 +21,9 @@ Rails.application.routes.draw do
   get 'board/feature_up'
   get 'board/feature_down'
   get 'board/feature_share'
+  
+  get 'board/c_feature_up'
+  get 'board/c_feature_down'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,39 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href="/assets/css/bootstrap.css" rel="stylesheet">
+  <link href="/assets/css/facebook.css" rel="stylesheet">
+</head>
+<body style="background: url('/assets/img/reg_bg.png') no-repeat center center fixed;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;">
+<div style="position: relative; display:inline-block; margin-left:25%;margin-right:25%;">
+<h2>로그인</h2>
+<p>닉네임으로 로그인 해주세요!!!</p>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :닉네임 %><br />
+    <%= f.text_field :username, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :비밀번호 %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :기억하시겠습니까? %>
+    </div>
+  <% end -%>
+
+  <div class="action" style="margin-top:1%;text-align:left;
+  line-height:150%;">
+    <%= f.submit "로그인" %><br>
+
+<% end %>
+<%= render "users/shared/links" %>
+  </div>
+</div>
+</body>

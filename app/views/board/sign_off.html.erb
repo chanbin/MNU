@@ -3,17 +3,17 @@
 	<head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
         <meta charset="utf-8">
-        <title>목포대학교 대신 전해줄게</title>
+        <title>목포대학교 커뮤니티</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <link href="assets/css/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap.css" rel="stylesheet">
         <!--[if lt IE 9]>
           <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-        <link href="assets/css/facebook.css" rel="stylesheet">
+        <link href="/assets/css/facebook.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
     </head>
     
     <body>
-        
         <div class="wrapper">
 			<div class="box">
 				<div class="row row-offcanvas row-offcanvas-left">
@@ -61,7 +61,7 @@
 								<span class="icon-bar"></span>
 							  </button>
 							  <a href="<%=root_path%>" class="navbar-brand logo">M</a>
-							  <h1 style="font-size:1.5em;margin-top:12px;margin-left:15%;margin-right:40px;width:119%;">목포대학교 대신 전해줄게</h1>
+							  <h1 style="font-size:1.5em;margin-top:12px;margin-left:15%;margin-right:40px;width:119%;">목포대학교 커뮤니티</h1>
 							</div>
 							<nav class="collapse navbar-collapse" role="navigation">
 							<form class="navbar-form navbar-left">
@@ -87,11 +87,11 @@
 							  <li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i></a>
 								<ul class="dropdown-menu">
-								  <li><a href="">More</a></li>
-								  <li><a href="">More</a></li>
-								  <li><a href="">More</a></li>
-								  <li><a href="">More</a></li>
-								  <li><a href="">More</a></li>
+								  <li><a href="/users/sign_in">로그인</a></li>
+								  <li><a href="/users/sign_up">회원가입</a></li>
+								  <li><a>More</a></li>
+								  <li><a>More</a></li>
+								  <li><a>More</a></li>
 								</ul>
 							  </li>
 							</ul>
@@ -107,85 +107,30 @@
 								  
 								 <!-- main col left --> 
 								 <div class="col-sm-5" style="color:#444;">
-								 	<h2 style="margin-left:5px; margin-top:-4%;"><span class="input-group-btn"><button class="btn-lg btn-primary" type="button"><a href="/board/sign_on">로그인</a></button></span></h2>
-								 	<div class="well"> 
-										<form class="form">
-										<h4>사용자 등록</h4>
-										<div class="input-group text-center">
-										<input class="form-control input-lg" style="font-size:80%;" placeholder="Enter your email address" type="text">
-										  <span class="input-group-btn"><button class="btn btn-lg btn-primary" type="button">OK</button></span>
-										</div>
-									  </form>
-									</div>
+								 	<h2 style="margin-left:5px; margin-top:-4%; margin-bottom:15px;"><span class="input-group-btn">
+								 		<button class="btn-lg btn-primary" type="button"><a href="/users/sign_in"  style="color:white;">회원가입, 로그인</a></button></span></h2>
 								   
 									  <div class="panel panel-default">
-										<div class="panel-thumbnail"><img src="assets/img/bg_5.jpg" class="img-responsive"></div>
+										<div class="panel-thumbnail"><img src="/assets/img/bg_5.jpg" class="img-responsive"></div>
 										<div class="panel-body">
-										  <p class="lead" style="font-weight:800;">목포대학교 대신 전해줄게</p>
-										  <p>사용자 45명, 포스팅 13개</p>
+										  <p class="lead" style="font-weight:800;">목포대학교 커뮤니티(개발중)</p>
+										  <code>로그인 하셔야 댓글 작성이 가능합니다!</code>
+										  <p>사용자 <%=@mUser_T%>명, 포스팅 <%=@mPost_T%>개</p>
 										  
 										  <p>
-											<img src="assets/img/uFp_tsTJboUY7kue5XAsGAs28.png" height="28px" width="28px">
+											<img src="/assets/img/uFp_tsTJboUY7kue5XAsGAs28.png" height="28px" width="28px">
 										  </p>
 										</div>
 									  </div>
-								   
-									  <div class="panel panel-default">
-										<div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Bootstrap Examples</h4></div>
-										  <div class="panel-body">
-											<div class="list-group">
-											  <a href="http://usebootstrap.com/theme/facebook" class="list-group-item">Modal / Dialog</a>
-											  <a href="http://usebootstrap.com/theme/facebook" class="list-group-item">Datetime Examples</a>
-											  <a href="http://usebootstrap.com/theme/facebook" class="list-group-item">Data Grids</a>
-											</div>
-										  </div>
-									  </div>
-								   
-									  <div class="well"> 
-										   <form class="form-horizontal" role="form">
-											<h4>What's New</h4>
-											 <div class="form-group" style="padding:14px;">
-											  <textarea class="form-control" placeholder="Update your status"></textarea>
-											</div>
-											<button class="btn btn-primary pull-right" type="button">Post</button><ul class="list-inline"><li><a href=""><i class="glyphicon glyphicon-upload"></i></a></li><li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li><li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li></ul>
-										  </form>
-									  </div>
-								   
-									  <div class="panel panel-default">
-										 <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>More Templates</h4></div>
-										  <div class="panel-body">
-											<img src="assets/img/150x150.gif" class="img-circle pull-right"> <a href="#">Free @Bootply</a>
-											<div class="clearfix"></div>
-											There a load of new free Bootstrap 3
-		 ready templates at Bootply. All of these templates are free and don't 
-		require extensive customization to the Bootstrap baseline.
-											<hr>
-											<ul class="list-unstyled"><li><a href="http://usebootstrap.com/theme/facebook">Dashboard</a></li><li><a href="http://usebootstrap.com/theme/facebook">Darkside</a></li><li><a href="http://usebootstrap.com/theme/facebook">Greenfield</a></li></ul>
-										  </div>
-									  </div>
-								   
-									  <div class="panel panel-default">
-										<div class="panel-heading"><h4>What Is Bootstrap?</h4></div>
-										<div class="panel-body">
-											Bootstrap is front end frameworkto 
-		build custom web applications that are fast, responsive &amp; intuitive.
-		 It consist of CSS and HTML for typography, forms, buttons, tables, 
-		grids, and navigation along with custom-built jQuery plug-ins and 
-		support for responsive layouts. With dozens of reusable components for 
-		navigation, pagination, labels, alerts etc..                          </div>
-									  </div>
-
-										
-								   
 								  </div>
 								  
 								  <!-- main col right -->
 								  <div class="col-sm-7">
-							  
+							  <!--
 									   <div class="panel panel-default">
 										 <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Bootply Editor &amp; Code Library</h4></div>
 										  <div class="panel-body">
-											<p><img src="assets/img/150x150.gif" class="img-circle pull-right"> <a href="#">The Bootstrap Playground</a></p>
+											<p><img src="/assets/img/150x150.gif" class="img-circle pull-right"> <a href="#">The Bootstrap Playground</a></p>
 											<div class="clearfix"></div>
 											<hr>
 											Design, build, test, and prototype 
@@ -195,50 +140,42 @@
 		snippets in the 100% free Bootply.com code repository.
 										  </div>
 									   </div>
-									
+									-->
+									<% @mPost.each do |p| %>
 									   <div class="panel panel-default">
-										 <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Stackoverflow</h4></div>
+										 <div class="panel-heading title"><h4>작성자: <%=p.writer%></h4><p style="font-size:70%;margin-bottom:-4%;"><%=p.updated_at%></p></div>
 										  <div class="panel-body">
-											<img src="assets/img/150x150.gif" class="img-circle pull-right"> <a href="#">Keyword: Bootstrap</a>
+										  	<pre style="background:rgba(255, 255, 255, 0.5);border:none;font-size:90%;"><%=p.content%></pre><br>
+										  	<a href="#">#tag: 분실물</a>
+											<hr>
+											
+											<img src="/assets/img/150x150.gif" class="img-circle pull-right">
 											<div class="clearfix"></div>
 											<hr>
 											
-											<p>If you're looking for help with Bootstrap code, the <code>twitter-bootstrap</code> tag at <a href="http://stackoverflow.com/questions/tagged/twitter-bootstrap">Stackoverflow</a> is a good place to find answers.</p>
-											
-											<hr>
-											<form>
-											<div class="input-group">
-											  <div class="input-group-btn">
-											  <button class="btn btn-default">+1</button><button class="btn btn-default"><i class="glyphicon glyphicon-share"></i></button>
+											<div class="input-group"style="width:60%;">
+											  <div class="input-group-btn" sytle="display:inline;">
+											  <button class="btn btn-default"><%=p.like%> <i class="glyphicon glyphicon-thumbs-up"></i></button>
+											  <button class="btn btn-default"><%=p.hate%> <i class="glyphicon glyphicon-thumbs-down"></i></button>
+											  <button class="btn btn-default" onclick="location.href='/board/comment?id=<%=p.id%>' "><%=p.share%> 댓글</button>
+											  <button class="btn btn-default">공유 <i class="glyphicon glyphicon-share"></i></button>
 											  </div>
-											  <input class="form-control" placeholder="Add a comment.." type="text">
 											</div>
-											</form>
 											
 										  </div>
 									   </div>
+									<% end %>
 
 									   <div class="panel panel-default">
-										 <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Portlet Heading</h4></div>
-										  <div class="panel-body">
-											<ul class="list-group">
-											<li class="list-group-item">Modals</li>
-											<li class="list-group-item">Sliders / Carousel</li>
-											<li class="list-group-item">Thumbnails</li>
-											</ul>
-										  </div>
-									   </div>
-									
-									   <div class="panel panel-default">
-										<div class="panel-thumbnail"><img src="assets/img/bg_4.jpg" class="img-responsive"></div>
+										<div class="panel-thumbnail"><img src="/assets/img/bg_4.jpg" class="img-responsive"></div>
 										<div class="panel-body">
 										  <p class="lead">Social Good</p>
 										  <p>1,200 Followers, 83 Posts</p>
 										  
 										  <p>
-											<img src="assets/img/photo.jpg" height="28px" width="28px">
-											<img src="assets/img/photo.png" height="28px" width="28px">
-											<img src="assets/img/photo_002.jpg" height="28px" width="28px">
+											<img src="/assets/img/photo.jpg" height="28px" width="28px">
+											<img src="/assets/img/photo.png" height="28px" width="28px">
+											<img src="/assets/img/photo_002.jpg" height="28px" width="28px">
 										  </p>
 										</div>
 									  </div>
@@ -300,14 +237,18 @@
 			  <div class="modal-footer">
 				  <div>
 				  <button class="btn btn-primary btn-sm" data-dismiss="modal" aria-hidden="true">Post</button>
-					<ul class="pull-left list-inline"><li><a href=""><i class="glyphicon glyphicon-upload"></i></a></li><li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li><li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li></ul>
+					<ul class="pull-left list-inline">
+						<li><a href=""><i class="glyphicon glyphicon-upload"></i></a></li>
+						<li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li>
+						<li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li>
+					</ul>
 				  </div>	
 			  </div>
 		  </div>
 		  </div>
 		</div>
-        <script type="text/javascript" src="assets/js/jquery.js"></script>
-        <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+        <script type="text/javascript" src="/assets/js/jquery.js"></script>
+        <script type="text/javascript" src="/assets/js/bootstrap.js"></script>
         <script type="text/javascript">
         $(document).ready(function() {
 			$('[data-toggle=offcanvas]').click(function() {

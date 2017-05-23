@@ -1,7 +1,26 @@
 Rails.application.routes.draw do
+  devise_for :users
+
   root 'board#sign_off'
   get 'board/sign_on'
-  get 'board/sign_in'
+  post 'board/sign_on'
+  
+  get 'board/sign_off'
+  
+  post 'board/create'
+  get  'board/edit'
+  post 'board/edit'
+  post 'board/update'
+  post 'board/destroy'
+
+  get 'board/comment'
+  post 'board/comment'
+  
+  post 'board/write_comment'
+  
+  get 'board/feature_up'
+  get 'board/feature_down'
+  get 'board/feature_share'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

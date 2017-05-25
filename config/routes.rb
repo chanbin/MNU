@@ -8,10 +8,11 @@ Rails.application.routes.draw do
   get 'board/sign_off'
   
   post 'board/create'
+  get 'board/new_post'
   get  'board/edit'
   post 'board/edit'
   post 'board/update'
-  post 'board/destroy'
+  get 'board/destroy'
 
   get 'board/comment'
   post 'board/comment'

@@ -12,11 +12,11 @@ class BoardController < ApplicationController
         @mPost.each do |p|
             @mPost_T= @mPost_T + 1
         end
-
+        @mComment = Comment.all
     end
     
     def sign_off
-        @mPost = Post.all
+        @mPost = Post.all.reverse
         @mUser = User.all
         @mPost_T = 0
         @mUser_T = 0
@@ -26,14 +26,18 @@ class BoardController < ApplicationController
         @mPost.each do |p|
             @mPost_T= @mPost_T + 1
         end
+        @mComment = Comment.all
         reset_session
     end
     
+    def new_post
+    end
     
     def create
-        Post.create(content: params[:content], writer: current_user.username)
+        Post.create(content: params[:content], writer: current_user.username, image: params[:image])
         redirect_to "/board/sign_on"
     end
+
     
     def edit
         @edit = Post.find(params[:id])
@@ -43,6 +47,7 @@ class BoardController < ApplicationController
         if params[:writer] == current_user.username
             update = Post.find(params[:id])
             update.content = params[:content]
+            update.image = params[:image]
             update.save
         else
             nil

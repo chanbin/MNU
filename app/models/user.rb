@@ -18,4 +18,5 @@ class User < ActiveRecord::Base
       errors.add(:username, :invalid)
     end
   end
+  mount_uploader :image, ImageUploader
 end

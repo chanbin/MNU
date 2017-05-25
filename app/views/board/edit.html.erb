@@ -74,13 +74,10 @@
 							</form>
 							<ul class="nav navbar-nav">
 							  <li>
-								<a href="#"><i class="glyphicon glyphicon-home"></i> Home</a>
+								<a href=""><i class="glyphicon glyphicon-home"></i> Home</a>
 							  </li>
 							  <li>
-								<a href="#postModal" role="button" data-toggle="modal"><i class="glyphicon glyphicon-plus"></i> Post</a>
-							  </li>
-							  <li>
-								<a href="#"><span class="badge">badge</span></a>
+								<a href=""><span class="badge">사용자 홈</span></a>
 							  </li>
 							</ul>
 							<ul class="nav navbar-nav navbar-right">
@@ -117,22 +114,21 @@
 										 	<button class="btn btn-default" onclick="location.href='/board/sign_on'">이전으로</button>
 										 	</div>
 										  <h4>작성자: <%=@edit.writer%></h4></div>
-										  	<%= form_tag("/board/update",{id: 'usrform'}) do %>
+										  	<%= form_tag("/board/update", multipart: true) do %>
 										 		<input name="id" type=hidden value="<%=@edit.id%>">
 										 		<input name="writer" type=hidden value="<%=@edit.writer%>">
 										 		
 										 	
 										  <div class="panel-body">
 										  	<p>
-										  	<textarea name="content" rows="4" cols="50" style="border:none;font-size:90%;" form="usrform"><%=@edit.content%></textarea>
+										  	<textarea class="img-responsive" name="content" rows="4" cols="50" style="border:none;font-size:90%;"><%=@edit.content%></textarea>
 										  	</p>
 										  	<br>
 										  	<a href="#">#tag: 분실물</a>
 											<hr>
-											
-											<img src="/assets/img/150x150.gif" class="img-circle pull-right">
+											<img src="<%=@edit.image.url%>" class="img">
 											<div class="clearfix"></div>
-												<input type=submit class="btn btn-primary" value="수정">
+												<input name="image" class="btn glyphicon glyphicon-camera" type="file"><input type=submit class="btn btn-primary" value="수정">
 											<hr>
 											<% end %>
 
@@ -154,7 +150,7 @@
 								  </div>
 								  <div class="col-sm-6">
 									<p>
-									<a href="#" class="pull-right">&copyCopyright LikeLion</a>
+									<a href="https://likelion.net" class="pull-right">&copyCopyright LikeLion</a>
 									</p>
 								  </div>
 								</div>
@@ -179,29 +175,6 @@
 
 
 		<!--post modal-->
-		<div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-		  <div class="modal-dialog">
-		  <div class="modal-content">
-			  <div class="modal-header">
-				  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
-					Update Status
-			  </div>
-			  <div class="modal-body">
-				  <form class="form center-block">
-					<div class="form-group">
-					  <textarea class="form-control input-lg" autofocus="" placeholder="What do you want to share?"></textarea>
-					</div>
-				  </form>
-			  </div>
-			  <div class="modal-footer">
-				  <div>
-				  <button class="btn btn-primary btn-sm" data-dismiss="modal" aria-hidden="true">Post</button>
-					<ul class="pull-left list-inline"><li><a href=""><i class="glyphicon glyphicon-upload"></i></a></li><li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li><li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li></ul>
-				  </div>	
-			  </div>
-		  </div>
-		  </div>
-		</div>
         <script type="text/javascript" src="/assets/js/jquery.js"></script>
         <script type="text/javascript" src="/assets/js/bootstrap.js"></script>
         <script type="text/javascript">
